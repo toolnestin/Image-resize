@@ -136,7 +136,7 @@
     /* BLOG */
     .blog-bg{background:#fff;}
     .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:44px;}
-    .blog-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:10px;}
+    .blog-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-decoration:none;transition:all .25s;display:flex;flex-direction:column;gap:10px;cursor:pointer;}
     .blog-card:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px);}
     .blog-tag{display:inline-block;background:var(--blue-light);color:var(--blue);font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;width:fit-content;}
     .blog-card h3{font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;}
@@ -412,11 +412,11 @@
       <p class="section-sub">Step-by-step guides for government forms, social media and more.</p>
     </div>
     <div class="blog-grid fade-up">
-      <a href="#" class="blog-card"><span class="blog-tag">Guide</span><h3>How to Resize Image to 50KB</h3><p>Step-by-step guide to compress any image to exactly 50KB for government forms.</p><span class="blog-arrow">Read More →</span></a>
-      <a href="#" class="blog-card"><span class="blog-tag">How To</span><h3>Passport Size Photo Guide</h3><p>Complete guide to create correct passport size photos at home for free.</p><span class="blog-arrow">Read More →</span></a>
-      <a href="#" class="blog-card"><span class="blog-tag">SSC</span><h3>SSC Form Photo Requirements</h3><p>Exact photo size, format and file size required for SSC CGL & CHSL forms.</p><span class="blog-arrow">Read More →</span></a>
-      <a href="#" class="blog-card"><span class="blog-tag">Tips</span><h3>Compress JPG Without Losing Quality</h3><p>Best techniques to compress JPG images while keeping maximum quality.</p><span class="blog-arrow">Read More →</span></a>
-      <a href="#" class="blog-card"><span class="blog-tag">Railway</span><h3>Railway Form Image Size Guide</h3><p>Railway recruitment form photo & signature size requirements explained clearly.</p><span class="blog-arrow">Read More →</span></a>
+      <div class="blog-card" onclick="openBlog('resize50')"><span class="blog-tag">Guide</span><h3>How to Resize Image to 50KB</h3><p>Step-by-step guide to compress any image to exactly 50KB for government forms.</p><span class="blog-arrow">Read More →</span></div>
+      <div class="blog-card" onclick="openBlog('passport')"><span class="blog-tag">How To</span><h3>Passport Size Photo Guide</h3><p>Complete guide to create correct passport size photos at home for free.</p><span class="blog-arrow">Read More →</span></div>
+      <div class="blog-card" onclick="openBlog('ssc')"><span class="blog-tag">SSC</span><h3>SSC Form Photo Requirements</h3><p>Exact photo size, format and file size required for SSC CGL & CHSL forms.</p><span class="blog-arrow">Read More →</span></div>
+      <div class="blog-card" onclick="openBlog('compress')"><span class="blog-tag">Tips</span><h3>Compress JPG Without Losing Quality</h3><p>Best techniques to compress JPG images while keeping maximum quality.</p><span class="blog-arrow">Read More →</span></div>
+      <div class="blog-card" onclick="openBlog('railway')"><span class="blog-tag">Railway</span><h3>Railway Form Image Size Guide</h3><p>Railway recruitment form photo & signature size requirements explained clearly.</p><span class="blog-arrow">Read More →</span></div>
     </div>
   </div>
 </section>
@@ -458,9 +458,9 @@
       <p class="section-sub" style="margin:0 auto;">Start free, upgrade when you need more power.</p>
     </div>
     <div class="pricing-grid fade-up">
-      <div class="price-card"><div class="price-name">Free</div><div class="price-amount">₹0 <span>/ forever</span></div><p class="price-desc">Perfect for personal use and occasional image editing.</p><ul class="price-features"><li>Unlimited image resize</li><li>Basic compression</li><li>JPG, PNG, WEBP support</li><li>No watermark</li><li>Browser-based processing</li></ul><button class="price-btn">Get Started Free</button></div>
-      <div class="price-card featured"><div class="price-badge">⚡ Most Popular</div><div class="price-name">Pro</div><div class="price-amount">₹99 <span>/ month</span></div><p class="price-desc">For power users who need advanced tools and faster processing.</p><ul class="price-features"><li>Everything in Free</li><li>Batch processing (50 images)</li><li>Priority processing speed</li><li>PDF tools access</li><li>AI tools access</li><li>Email support</li></ul><button class="price-btn">Start Pro Plan</button></div>
-      <div class="price-card"><div class="price-name">Business</div><div class="price-amount">₹299 <span>/ month</span></div><p class="price-desc">For teams and businesses with high-volume image processing needs.</p><ul class="price-features"><li>Everything in Pro</li><li>Unlimited batch processing</li><li>API access</li><li>White-label option</li><li>Priority support</li><li>Custom integrations</li></ul><button class="price-btn">Contact Sales</button></div>
+      <div class="price-card"><div class="price-name">Free</div><div class="price-amount">₹0 <span>/ forever</span></div><p class="price-desc">Perfect for personal use and occasional image editing.</p><ul class="price-features"><li>Unlimited image resize</li><li>Basic compression</li><li>JPG, PNG, WEBP support</li><li>No watermark</li><li>Browser-based processing</li></ul><button class="price-btn" onclick="document.getElementById('dropZone').scrollIntoView({behavior:'smooth'})">Get Started Free</button></div>
+      <div class="price-card featured"><div class="price-badge">⚡ Most Popular</div><div class="price-name">Pro</div><div class="price-amount">₹99 <span>/ month</span></div><p class="price-desc">For power users who need advanced tools and faster processing.</p><ul class="price-features"><li>Everything in Free</li><li>Batch processing (50 images)</li><li>Priority processing speed</li><li>PDF tools access</li><li>AI tools access</li><li>Email support</li></ul><button class="price-btn" onclick="openInquiry('Pro Plan — ₹99/month')">Get Pro Plan</button></div>
+      <div class="price-card"><div class="price-name">Business</div><div class="price-amount">₹299 <span>/ month</span></div><p class="price-desc">For teams and businesses with high-volume image processing needs.</p><ul class="price-features"><li>Everything in Pro</li><li>Unlimited batch processing</li><li>API access</li><li>White-label option</li><li>Priority support</li><li>Custom integrations</li></ul><button class="price-btn" onclick="openInquiry('Business Plan — ₹299/month')">Contact Sales</button></div>
     </div>
   </div>
 </section>
@@ -531,7 +531,34 @@
   </div>
 </footer>
 
-<!-- POLICY MODAL -->
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="inquiryOverlay" onclick="closeInquiryOutside(event)">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="inquiryTitle">Plan Inquiry</h3>
+      <button class="modal-close" onclick="closeInquiry()">✕</button>
+    </div>
+    <div class="modal-body" style="padding:24px;">
+      <p style="margin-bottom:20px;color:var(--muted);">Interested in this plan? Fill the form below and we'll get back to you within 24 hours.</p>
+      <div style="margin-bottom:16px;"><label style="display:block;font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:7px;">Your Name</label><input id="inqName" type="text" placeholder="Rahul Sharma" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;padding:11px 14px;outline:none;"/></div>
+      <div style="margin-bottom:16px;"><label style="display:block;font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:7px;">Email Address</label><input id="inqEmail" type="email" placeholder="rahul@email.com" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;padding:11px 14px;outline:none;"/></div>
+      <div style="margin-bottom:16px;"><label style="display:block;font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:7px;">Selected Plan</label><input id="inqPlan" type="text" readonly style="width:100%;background:var(--blue-light);border:1px solid var(--border);border-radius:10px;color:var(--blue);font-family:'DM Mono',monospace;font-size:14px;padding:11px 14px;outline:none;font-weight:700;"/></div>
+      <div style="margin-bottom:20px;"><label style="display:block;font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:7px;">Message (Optional)</label><textarea id="inqMsg" placeholder="Any questions about this plan..." style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;padding:11px 14px;outline:none;min-height:90px;resize:vertical;"></textarea></div>
+      <button onclick="submitInquiry()" style="width:100%;padding:14px;background:var(--blue);color:#fff;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;">Send Inquiry →</button>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG MODAL -->
+<div class="modal-overlay" id="blogOverlay" onclick="closeBlogOutside(event)">
+  <div class="modal-box" style="max-width:700px;">
+    <div class="modal-head">
+      <h3 id="blogModalTitle">Blog</h3>
+      <button class="modal-close" onclick="closeBlog()">✕</button>
+    </div>
+    <div class="modal-body" id="blogModalBody"></div>
+  </div>
+</div>
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal-box">
     <div class="modal-head">
@@ -723,6 +750,120 @@
   /* Contact form */
   function submitForm(){
     alert('Message sent! We will get back to you soon. 😊');
+  }
+
+  /* ── INQUIRY MODAL ── */
+  function openInquiry(plan){
+    document.getElementById('inquiryTitle').textContent = plan + ' — Inquiry';
+    document.getElementById('inqPlan').value = plan;
+    document.getElementById('inquiryOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeInquiry(){
+    document.getElementById('inquiryOverlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function closeInquiryOutside(e){
+    if(e.target===document.getElementById('inquiryOverlay')) closeInquiry();
+  }
+  function submitInquiry(){
+    const name=document.getElementById('inqName').value.trim();
+    const email=document.getElementById('inqEmail').value.trim();
+    if(!name||!email){ alert('Please fill Name and Email'); return; }
+    closeInquiry();
+    alert('✅ Inquiry sent! We will contact you at '+email+' within 24 hours.');
+    document.getElementById('inqName').value='';
+    document.getElementById('inqEmail').value='';
+    document.getElementById('inqMsg').value='';
+  }
+
+  /* ── BLOG MODAL ── */
+  const blogs = {
+    resize50:{
+      title:'How to Resize Image to 50KB',
+      body:`<span style="background:var(--blue-light);color:var(--blue);font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;">Guide</span>
+      <h4>Why 50KB?</h4>
+      <p>Many government forms like UPSC, SSC, Railways require images under 50KB. Here's how to do it easily using ToolNest.</p>
+      <h4>Step 1: Upload Your Image</h4>
+      <p>Click the upload area at the top of this page and select your JPG or PNG image.</p>
+      <h4>Step 2: Set Quality to 40-50%</h4>
+      <p>Lower the quality slider to around 40–50%. This reduces file size significantly without much visible quality loss.</p>
+      <h4>Step 3: Set Width to 800px</h4>
+      <p>Set width to 800px and leave height as Auto. This keeps the aspect ratio correct.</p>
+      <h4>Step 4: Choose JPEG Format</h4>
+      <p>JPEG gives the smallest file size. Select JPEG from the format dropdown.</p>
+      <h4>Step 5: Download</h4>
+      <p>Click Resize & Compress, then download your image. Most images will be well under 50KB after this.</p>
+      <h4>Tips</h4>
+      <p>If image is still large, reduce quality further to 30%. For passport photos, keep quality at 60%+ for clarity.</p>`
+    },
+    passport:{
+      title:'Passport Size Photo Guide',
+      body:`<span style="background:var(--blue-light);color:var(--blue);font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;">How To</span>
+      <h4>Standard Passport Photo Size</h4>
+      <p>Indian passport requires: <strong>35mm x 45mm</strong> (width x height). For digital uploads: <strong>200 x 230 pixels</strong> minimum.</p>
+      <h4>Photo Requirements</h4>
+      <p>✓ White or light background<br/>✓ Face clearly visible<br/>✓ No glasses<br/>✓ Neutral expression<br/>✓ File size: 10KB to 500KB<br/>✓ Format: JPEG</p>
+      <h4>How to Resize Using ToolNest</h4>
+      <p>1. Upload your photo<br/>2. Set Width: 413px, Height: 531px (for 35x45mm at 300 DPI)<br/>3. Format: JPEG, Quality: 80%<br/>4. Download and use!</p>
+      <h4>For Government Forms</h4>
+      <p>Most forms accept 200x230px at 50KB. Use Width: 200, Height: 230, Quality: 70% for best results.</p>`
+    },
+    ssc:{
+      title:'SSC Form Photo Requirements',
+      body:`<span style="background:var(--blue-light);color:var(--blue);font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;">SSC</span>
+      <h4>SSC CGL / CHSL Photo Specifications</h4>
+      <p>SSC forms have specific requirements for both photo and signature uploads.</p>
+      <h4>Photo Requirements</h4>
+      <p>✓ Size: <strong>20KB to 50KB</strong><br/>✓ Dimensions: <strong>200 x 230 pixels</strong><br/>✓ Format: <strong>JPEG only</strong><br/>✓ Background: White or off-white<br/>✓ Recent passport style photo</p>
+      <h4>Signature Requirements</h4>
+      <p>✓ Size: <strong>10KB to 20KB</strong><br/>✓ Dimensions: <strong>140 x 60 pixels</strong><br/>✓ Format: <strong>JPEG only</strong><br/>✓ Sign on white paper, scan/photo it</p>
+      <h4>How to Resize for SSC</h4>
+      <p>Photo: Width 200, Height 230, JPEG, Quality 60%<br/>Signature: Width 140, Height 60, JPEG, Quality 70%</p>`
+    },
+    compress:{
+      title:'Compress JPG Without Losing Quality',
+      body:`<span style="background:var(--blue-light);color:var(--blue);font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;">Tips</span>
+      <h4>Best Compression Settings</h4>
+      <p>The key is balancing quality vs file size. Here are the best settings for different use cases.</p>
+      <h4>For Web / Social Media</h4>
+      <p>Quality: <strong>70-80%</strong> — Great visual quality, 60-70% smaller file size. Perfect for websites and Instagram.</p>
+      <h4>For Government Forms</h4>
+      <p>Quality: <strong>50-60%</strong> — Meets size requirements (under 50KB) while keeping face clearly visible.</p>
+      <h4>For Print</h4>
+      <p>Quality: <strong>85-95%</strong> — Keep quality high for printing. File size matters less here.</p>
+      <h4>Pro Tips</h4>
+      <p>✓ Always start with the original high-quality image<br/>✓ Never compress an already compressed image<br/>✓ JPEG is always smaller than PNG for photos<br/>✓ Resize dimensions first, then compress quality</p>`
+    },
+    railway:{
+      title:'Railway Form Image Size Guide',
+      body:`<span style="background:var(--blue-light);color:var(--blue);font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;">Railway</span>
+      <h4>RRB / Railway Recruitment Photo Specs</h4>
+      <p>Railway recruitment board forms require specific photo and signature sizes for online applications.</p>
+      <h4>Photo Requirements</h4>
+      <p>✓ File size: <strong>15KB to 40KB</strong><br/>✓ Dimensions: <strong>200 x 230 pixels</strong><br/>✓ Format: <strong>JPEG</strong><br/>✓ Background: White<br/>✓ Taken within last 6 months</p>
+      <h4>Signature Requirements</h4>
+      <p>✓ File size: <strong>10KB to 30KB</strong><br/>✓ Dimensions: <strong>140 x 60 pixels</strong><br/>✓ Format: <strong>JPEG</strong><br/>✓ Black ink on white paper</p>
+      <h4>Quick Resize Settings</h4>
+      <p>Photo → Width: 200, Height: 230, JPEG, Quality: 55%<br/>Signature → Width: 140, Height: 60, JPEG, Quality: 65%</p>
+      <h4>Important Note</h4>
+      <p>Always verify the exact requirements on the official RRB website as specs may change per notification.</p>`
+    }
+  };
+
+  function openBlog(key){
+    const b=blogs[key];
+    document.getElementById('blogModalTitle').textContent=b.title;
+    document.getElementById('blogModalBody').innerHTML=b.body;
+    document.getElementById('blogOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeBlog(){
+    document.getElementById('blogOverlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function closeBlogOutside(e){
+    if(e.target===document.getElementById('blogOverlay')) closeBlog();
   }
 
   /* Scroll animations */
